@@ -24,6 +24,7 @@ def replace_text(changes_list, template_doc_name, new_doc_name):
                         if item[0] in paragraph.text:
                             paragraph.text = paragraph.text.replace(item[0], str(item[1]))
                             paragraph.style = document.styles['Normal']
+        
         # отдельно переделывается нижний колонтитул
         style = document.styles['Footer']
         font = style.font
@@ -40,49 +41,3 @@ def replace_text(changes_list, template_doc_name, new_doc_name):
 
     document.save(new_name)
     return new_name
-
-# def replace_textiii():
-#     template_doc_name = '1.docx'
-#     new_doc_name = '2'
-#     document = Document(template_doc_name)
-#     item = ['PIO', 'Балконов А.П.']
-
-#     style = document.styles['Footer']
-#     font = style.font
-#     font.name = 'Times New Roman'
-#     font.size = Pt(8)
-
-#     sections = document.sections
-#     for section in sections:
-#         for paragraph in section.footer.paragraphs:
-#             if item[0] in paragraph.text:
-#                 print('yra')
-#                 paragraph.text = paragraph.text.replace(item[0], str(item[1]))
-#                 paragraph.style = document.styles['Footer']
-#     new_name = new_doc_name + '.docx'
-#     document.save(new_name)
-#     return new_name
-
-# def replace_textiii():
-#     template_doc_name = '1.docx'
-#     new_doc_name = '2'
-#     document = Document(template_doc_name)
-#     item = ['PIO', 'Балконов А.П.']
-    
-#     style = document.styles['Footer']
-#     font = style.font
-#     font.name = 'Times New Roman'
-#     font.size = Pt(8)
-
-#     section = document.sections[0]
-#     for paragraph in section.footer.paragraphs:
-#         if item[0] in paragraph.text:
-#             print('yra')
-#             paragraph.text = paragraph.text.replace(item[0], str(item[1]))
-#             paragraph.style = document.styles['Footer']
-#     new_name = new_doc_name + '.docx'
-#     document.save(new_name)
-#     return new_name
-
-
-# replace_textiii()
