@@ -20,6 +20,7 @@ while True:
             # Проверка на наличие данных для создания папки и папки
             result = read_row(spreadsheet_id, os.environ.get('SHEET_NAME'),  'A', 'AX', str(item))
             result = result['valueRanges'][0]['values'][0]
+            
             if result[6] == '':
                 print('Не хватает названия магазина')
                 continue
