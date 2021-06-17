@@ -66,7 +66,7 @@ def column_check(spreadsheet_id, sheet_name, column_name, value_render_option='U
             response = request.execute()
         except Exception as e:
             print(str(e) + str(type(e)))
-            time.sleep(10)
+            time.sleep(1)
         else:
             series = pd.Series(response['valueRanges'][0]['values'])
             break
@@ -79,7 +79,7 @@ def column_check(spreadsheet_id, sheet_name, column_name, value_render_option='U
             response = request.execute()
         except Exception as e:
             print(str(e) + str(type(e)))
-            time.sleep(10)
+            time.sleep(1)
         else:
             series_current = pd.Series(response['valueRanges'][0]['values'])
 
@@ -145,7 +145,7 @@ def read_row(spreadsheet_id, sheet_name, start_column_name, final_column_name, r
             response = request.execute()
         except Exception as e:
             print(str(e) + str(type(e)))
-            time.sleep(10)
+            time.sleep(1)
         else:
             return response
         finally:
